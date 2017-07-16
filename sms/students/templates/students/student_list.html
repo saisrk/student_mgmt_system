@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if object_list %}
+<ul>
+{% for student in object_list %}
+<li><a href="{{ student.get_absolute_url }}">{{ student.first_name }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<h1>No Students</h1>
+{% endif %}
+<a href="{% url 'student:create' %}">Create Student</a>
+</body>
+</html>
